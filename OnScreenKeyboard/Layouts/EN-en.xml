@@ -12,8 +12,10 @@
       <KeyboardButton Char="i"/>
       <KeyboardButton Char="o"/>
       <KeyboardButton Char="p"/>
+      <KeyboardButton PredefinedKey="backspace"/>
     </Row>
     <Row>
+      <KeyboardButton PredefinedKey="caps_lock"/>
       <KeyboardButton Char="a"/>
       <KeyboardButton Char="s"/>
       <KeyboardButton Char="d"/>
@@ -23,8 +25,12 @@
       <KeyboardButton Char="j"/>
       <KeyboardButton Char="k"/>
       <KeyboardButton Char="l"/>
+      <KeyboardButton Char=";"/>
+      <KeyboardButton Char="'"/>
     </Row>
     <Row>
+      <KeyboardButton PredefinedKey="shift"/>
+      <KeyboardButton Char="@"/>
       <KeyboardButton Char="z"/>
       <KeyboardButton Char="x"/>
       <KeyboardButton Char="c"/>
@@ -32,15 +38,15 @@
       <KeyboardButton Char="b"/>
       <KeyboardButton Char="n"/>
       <KeyboardButton Char="m"/>
+      <KeyboardButton Char="="/>
+      <KeyboardButton PredefinedKey="shift"/>
     </Row>
     <Row>
-      <KeyboardButton Char="@"/>
       <KeyboardButton Char="."/>
       <KeyboardButton Char="?"/>
-      <KeyboardButton Char=" "/>
+      <KeyboardButton Char=" " Width="350"/>
       <KeyboardButton Char="_"/>
       <KeyboardButton Char="-"/>
-      <KeyboardButton Char="="/>
       <KeyboardButton PredefinedKey="change_lang"/>
     </Row>
   </KeyboardRows>

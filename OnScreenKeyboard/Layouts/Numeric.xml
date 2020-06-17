@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<KeyboardLayout LanguageCode="Numeric" LanguageNameShort="NUM" LanguageName="Numeric">
+  <KeyboardRows>
+    <Row>
+      <KeyboardButton Char="1"/>
+      <KeyboardButton Char="2"/>
+      <KeyboardButton Char="3"/>
+      <KeyboardButton Char="4"/>
+      <KeyboardButton Char="5"/>
+      <KeyboardButton Char="6"/>
+      <KeyboardButton Char="7"/>
+      <KeyboardButton Char="8"/>
+      <KeyboardButton Char="9"/>
+      <KeyboardButton Char="0"/>
+      <KeyboardButton PredefinedKey="backspace"/>
+    </Row>
+    <Row>
+      <KeyboardButton Char="!"/>
+      <KeyboardButton Char="@"/>
+      <KeyboardButton Char="#"/>
+      <KeyboardButton Char="$"/>
+      <KeyboardButton Char="%"/>
+      <KeyboardButton Char="^"/>
+      <KeyboardButton Char="&amp;"/>
+      <KeyboardButton Char="*"/>
+      <KeyboardButton Char="("/>
+      <KeyboardButton Char=")"/>
+      <KeyboardButton Char="_"/>
+    </Row>
+    <Row>
+      <KeyboardButton Char="+"/>
+      <KeyboardButton Char="="/>
+      <KeyboardButton Char="~"/>
+      <KeyboardButton Char="`"/>
+      <KeyboardButton Char="{"/>
+      <KeyboardButton Char="}"/>
+      <KeyboardButton Char="["/>
+      <KeyboardButton Char="]"/>
+      <KeyboardButton Char=":"/>
+    </Row>
+    <Row>
+      <KeyboardButton Char=";"/>
+      <KeyboardButton Char="?"/>
+      <KeyboardButton Char=" " Width="350"/>
+      <KeyboardButton Char="!"/>
+      <KeyboardButton Char="."/>
+      <KeyboardButton PredefinedKey="change_lang"/>
+    </Row>
+  </KeyboardRows>
+</KeyboardLayout>

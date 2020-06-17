@@ -5,6 +5,7 @@
   <Bottom Value="10" Type="Percent"/>
   <IncludeLayouts>
     <string>Layouts/RU-ru.xml</string>
+    <string>Layouts/Numeric.xml</string>
     <string>Layouts/EN-en.xml</string>
   </IncludeLayouts>
 </Config>
