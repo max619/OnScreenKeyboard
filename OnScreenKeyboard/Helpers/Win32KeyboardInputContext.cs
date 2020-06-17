@@ -35,7 +35,7 @@ namespace OnScreenKeyboard.Helpers
         {
 
             var rect = Win32Interop.GetWindowRectManaged(thisWindow.Handle);
-            var monitor = Win32Interop.MonitorFromRectManaged(rect, Win32Interop.MONITOR_DEFAULTTONEAREST);
+            var monitor = Win32Interop.MonitorFromRectManaged(rect, Win32Interop.MONITOR_DEFAULTTOPRIMARY);
             var monitorInfo = Win32Interop.GetMonitorInfoManaged(monitor);
 
             var positions = GetPosition(monitorInfo);
@@ -48,7 +48,7 @@ namespace OnScreenKeyboard.Helpers
         public void DockWindowAtBottom()
         {
             var rect = Win32Interop.GetWindowRectManaged(thisWindow.Handle);
-            var monitor = Win32Interop.MonitorFromRectManaged(rect, Win32Interop.MONITOR_DEFAULTTONEAREST);
+            var monitor = Win32Interop.MonitorFromRectManaged(rect, Win32Interop.MONITOR_DEFAULTTOPRIMARY);
             var monitorInfo = Win32Interop.GetMonitorInfoManaged(monitor);
 
             var positions = GetPosition(monitorInfo);
