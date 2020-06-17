@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<KeyboardLayout LanguageCode="RU-ru" LanguageNameShort="RU" LanguageName="Русский">
+  <KeyboardRows>
+    <Row>
+      <KeyboardButton Char="й"/>
+      <KeyboardButton Char="ц"/>
+      <KeyboardButton Char="у"/>
+      <KeyboardButton Char="к"/>
+      <KeyboardButton Char="е"/>
+      <KeyboardButton Char="г"/>
+      <KeyboardButton Char="ш"/>
+      <KeyboardButton Char="щ"/>
+      <KeyboardButton Char="з"/>
+      <KeyboardButton Char="х"/>
+      <KeyboardButton Char="ъ"/>
+      <KeyboardButton PredefinedKey="backspace"/>
+    </Row>
+    <Row>
+      <KeyboardButton PredefinedKey="caps_lock"/>
+      <KeyboardButton Char="ф"/>
+      <KeyboardButton Char="ы"/>
+      <KeyboardButton Char="в"/>
+      <KeyboardButton Char="а"/>
+      <KeyboardButton Char="п"/>
+      <KeyboardButton Char="р"/>
+      <KeyboardButton Char="о"/>
+      <KeyboardButton Char="л"/>
+      <KeyboardButton Char="д"/>
+      <KeyboardButton Char="ж"/>
+      <KeyboardButton Char="э"/>
+    </Row>
+    <Row>
+      <KeyboardButton PredefinedKey="shift"/>
+      <KeyboardButton Char="я"/>
+      <KeyboardButton Char="ч"/>
+      <KeyboardButton Char="с"/>
+      <KeyboardButton Char="м"/>
+      <KeyboardButton Char="и"/>
+      <KeyboardButton Char="т"/>
+      <KeyboardButton Char="ь"/>
+      <KeyboardButton Char="б"/>
+      <KeyboardButton Char="ю"/>
+      <KeyboardButton PredefinedKey="shift"/>
+    </Row>
+    <Row>
+      <KeyboardButton Char="@"/>
+      <KeyboardButton Char="."/>
+      <KeyboardButton Char="?"/>
+      <KeyboardButton Char=" " Width="350"/>
+      <KeyboardButton Char="_"/>
+      <KeyboardButton Char="-"/>
+      <KeyboardButton Char="="/>
+      <KeyboardButton PredefinedKey="change_lang"/>
+    </Row>
+  </KeyboardRows>
+</KeyboardLayout>

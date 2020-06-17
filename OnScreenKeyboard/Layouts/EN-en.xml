@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<KeyboardLayout LanguageCode="EN-en" LanguageNameShort="EN" LanguageName="English">
+  <KeyboardRows>
+    <Row>
+      <KeyboardButton Char="q"/>
+      <KeyboardButton Char="w"/>
+      <KeyboardButton Char="e"/>
+      <KeyboardButton Char="r"/>
+      <KeyboardButton Char="t"/>
+      <KeyboardButton Char="y"/>
+      <KeyboardButton Char="u"/>
+      <KeyboardButton Char="i"/>
+      <KeyboardButton Char="o"/>
+      <KeyboardButton Char="p"/>
+    </Row>
+    <Row>
+      <KeyboardButton Char="a"/>
+      <KeyboardButton Char="s"/>
+      <KeyboardButton Char="d"/>
+      <KeyboardButton Char="f"/>
+      <KeyboardButton Char="g"/>
+      <KeyboardButton Char="h"/>
+      <KeyboardButton Char="j"/>
+      <KeyboardButton Char="k"/>
+      <KeyboardButton Char="l"/>
+    </Row>
+    <Row>
+      <KeyboardButton Char="z"/>
+      <KeyboardButton Char="x"/>
+      <KeyboardButton Char="c"/>
+      <KeyboardButton Char="v"/>
+      <KeyboardButton Char="b"/>
+      <KeyboardButton Char="n"/>
+      <KeyboardButton Char="m"/>
+    </Row>
+    <Row>
+      <KeyboardButton Char="@"/>
+      <KeyboardButton Char="."/>
+      <KeyboardButton Char="?"/>
+      <KeyboardButton Char=" "/>
+      <KeyboardButton Char="_"/>
+      <KeyboardButton Char="-"/>
+      <KeyboardButton Char="="/>
+      <KeyboardButton PredefinedKey="change_lang"/>
+    </Row>
+  </KeyboardRows>
+</KeyboardLayout>

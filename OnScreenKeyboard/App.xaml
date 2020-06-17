@@ -1,0 +1,126 @@
+﻿<Application x:Class="OnScreenKeyboard.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OnScreenKeyboard.Controls" xmlns:helpers="clr-namespace:OnScreenKeyboard.Helpers">
+    <Application.Resources>
+        <SolidColorBrush x:Key="PressedKeyboardButtonColor" Color="#f1f1f1"/>
+        <SolidColorBrush x:Key="KeyboardButtonColor" Color="#fefefe"/>
+        <SolidColorBrush x:Key="KeyboardForegroundColor" Color="#000"/>
+
+
+        <Style TargetType="RepeatButton" x:Key="KeyboardButtonStyle">
+            <Setter Property="Background" Value="{StaticResource PressedKeyboardButtonColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource KeyboardForegroundColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="MinHeight" Value="50"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Interval" Value="20"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RepeatButton">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="PointerOver" />
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="_border" 
+                                                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame Value="{StaticResource PressedKeyboardButtonColor}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="_border" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                              Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="local:KeyboardControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="local:KeyboardControl">
+                        <Border>
+                            <Grid>
+                                <ItemsControl 
+                                ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CurrentLayout.KeyboardRows}"
+                                IsTabStop="False"
+                                IsTextSearchEnabled="False"
+                                BorderThickness="0">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <ItemsControl ItemsSource="{Binding}" 
+                                                  IsTabStop="False"
+                                                  IsTextSearchEnabled="False"
+                                                    BorderThickness="0">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <RepeatButton
+                                                        Style="{StaticResource KeyboardButtonStyle}"
+                                                        Command="{Binding Command}"
+                                                        CommandParameter="{Binding}"
+                                                        Content="{Binding DisplayChar}"
+                                                        Width="{Binding Width}"
+                                                        Height="{Binding Height}"/>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <Popup x:Name="_popup" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                    <ListView ItemsSource="{TemplateBinding AvailibleLayouts}" 
+                                              SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CurrentLayout, Mode=TwoWay}">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Width="100">
+                                                    <TextBlock Text="{Binding LanguageNameShort}"/>
+                                                    <TextBlock Text="{Binding LanguageName}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="EmptyButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>

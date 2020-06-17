@@ -1,0 +1,43 @@
+﻿<Window x:Class="OnScreenKeyboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnScreenKeyboard.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None" Topmost="True" ResizeMode="NoResize" Background="#ccc" AllowsTransparency="True">
+    <Grid>
+        <Viewbox Stretch="Uniform" Margin="35">
+        <local:KeyboardControl KeyboardInputContext="{StaticResource InputContext}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                CurrentLayout="{Binding Source={StaticResource Config}, Path=DefaultLayout}" 
+                               AvailibleLayouts="{Binding Source={StaticResource Config}, Path=Layouts}"/>
+        </Viewbox>
+        <Button Style="{StaticResource EmptyButton}" Click="Button_Click" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="25">
+            <Path x:Name="ButtonPath"
+                  Margin="3"
+                  Stroke="{StaticResource KeyboardForegroundColor}"
+                  StrokeThickness="1.5"
+                  StrokeStartLineCap="Square"
+                  StrokeEndLineCap="Square"
+                  Stretch="Uniform"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigure StartPoint="0,0">
+                                <LineSegment Point="25,25"/>
+                            </PathFigure>
+                            <PathFigure StartPoint="0,25">
+                                <LineSegment Point="25,0"/>
+                            </PathFigure>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+        </Button>
+    </Grid>
+</Window>

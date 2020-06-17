@@ -1,0 +1,10 @@
+﻿<Config>
+  <DockAtBottom>1</DockAtBottom>
+  <DefaultLayoutName>RU-ru</DefaultLayoutName>
+  <Top Value="50" Type="Percent"/>
+  <Bottom Value="10" Type="Percent"/>
+  <IncludeLayouts>
+    <string>Layouts/RU-ru.xml</string>
+    <string>Layouts/EN-en.xml</string>
+  </IncludeLayouts>
+</Config>
