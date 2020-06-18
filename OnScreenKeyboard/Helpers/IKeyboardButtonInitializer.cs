@@ -38,6 +38,7 @@ namespace OnScreenKeyboard.Helpers
     {
         public string SpecialButtonId { get; private set; }
         public KeyboardButton ButtonTemplate { get; private set; }
+        public Func<string> DisplayCharFactory { get; set; }
 
         public SpecialButtonInitializer(ICommand clickCommand, KeyboardButton template, string specialButtonId) : base(clickCommand)
         {
@@ -48,7 +49,7 @@ namespace OnScreenKeyboard.Helpers
         public override bool CanInitialize(KeyboardButton button)
         {
             return !string.IsNullOrEmpty(button.PredefinedKey) &&
-                button.PredefinedKey.Trim().ToLower() == SpecialButtonId;             
+                button.PredefinedKey.Trim().ToLower() == SpecialButtonId;
         }
 
         public override void Initialize(KeyboardButton button)
@@ -57,7 +58,10 @@ namespace OnScreenKeyboard.Helpers
 
             button.Char = ButtonTemplate.Char;
             button.KeyCode = ButtonTemplate.KeyCode;
-            button.DisplayChar = ButtonTemplate.DisplayChar;
+            if (DisplayCharFactory != null)
+                button.DisplayChar = DisplayCharFactory();
+            else
+                button.DisplayChar = ButtonTemplate.DisplayChar;
         }
     }
 }

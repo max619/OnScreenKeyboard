@@ -114,7 +114,10 @@ namespace OnScreenKeyboard.Controls
             _initializers.Add(new SpecialButtonInitializer(_changeLangCommand, new KeyboardButton
             {
                 DisplayChar = "LANG"
-            }, "change_lang"));
+            }, "change_lang")
+            {
+                DisplayCharFactory = () => CurrentLayout.LanguageNameShort
+            });
             _initializers.Add(new SpecialButtonInitializer(_capsKeyClick, new KeyboardButton
             {
                 DisplayChar = "Caps Lock"
