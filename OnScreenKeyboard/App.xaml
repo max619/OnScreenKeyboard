@@ -9,7 +9,7 @@
 
 
         <Style TargetType="RepeatButton" x:Key="KeyboardButtonStyle">
-            <Setter Property="Background" Value="{StaticResource PressedKeyboardButtonColor}"/>
+            <Setter Property="Background" Value="{StaticResource KeyboardButtonColor}"/>
             <Setter Property="Foreground" Value="{StaticResource KeyboardForegroundColor}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Margin" Value="2"/>
@@ -25,13 +25,13 @@
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="PointerOver" />
+                                    <VisualState x:Name="MouseOver" />
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="_border" 
-                                                                           Storyboard.TargetProperty="Background">
-                                                <DiscreteObjectKeyFrame Value="{StaticResource PressedKeyboardButtonColor}"/>
-                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimation Storyboard.TargetName="_border" 
+                                                                           Storyboard.TargetProperty="Background.Color"
+                                                            Duration="00:00:00.1"
+                                                            To="{Binding Source={StaticResource PressedKeyboardButtonColor}, Path=Color}"/>
                                         </Storyboard>
                                     </VisualState>
 
